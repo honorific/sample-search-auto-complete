@@ -5,6 +5,7 @@ import {useEffect, useState} from 'react'
 
 function App() {
   const [users, setUsers] = useState([])
+  const [text, setText] = useState('')
   useEffect(() => {
     const loadUsers = async () => {
       const response = await axios.get('https://reqres.in/api/users')
@@ -13,9 +14,17 @@ function App() {
     loadUsers()
   }, [])
 
+  const changeHandler = (text) => {
+    setText(text)
+  }
+
   return (
-    <div className='App'>
-      <input type='text' />
+    <div className='container'>
+      <input
+        type='text'
+        onChange={(e) => changeHandler(e.target.value)}
+        value={text}
+      />
     </div>
   )
 }
