@@ -21,6 +21,8 @@ function App() {
   return (
     <div className='container'>
       <input
+        className='col-md-12'
+        style={{marginTop: '10px'}}
         type='text'
         onChange={(e) => changeHandler(e.target.value)}
         value={text}
