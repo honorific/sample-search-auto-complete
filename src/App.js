@@ -42,6 +42,12 @@ function App() {
         type='text'
         onChange={(e) => changeHandler(e.target.value)}
         value={text}
+        //if we dont add the setTimeout the result will not be chosen
+        onBlur={() => {
+          setTimeout(() => {
+            setSuggestions([])
+          }, 300)
+        }}
       />
       {suggestions &&
         suggestions.map((suggestion, i) => {
