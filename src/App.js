@@ -1,5 +1,6 @@
 import logo from './logo.svg'
 import './App.css'
+import './custom.css'
 import axios from 'axios'
 import {useEffect, useState} from 'react'
 
@@ -40,7 +41,10 @@ function App() {
       {suggestions &&
         suggestions.map((suggestion, i) => {
           return (
-            <div key={i} className='col-md-12 justify-content-md-center'>
+            <div
+              key={i}
+              className='suggestion col-md-12 justify-content-md-center'
+            >
               {suggestion.email}
             </div>
           )
