@@ -16,6 +16,11 @@ function App() {
     loadUsers()
   }, [])
 
+  const onSuggestHandler = (text) => {
+    setText(text)
+    setSuggestions([])
+  }
+
   const changeHandler = (text) => {
     let matches = []
     if (text.length > 0) {
@@ -44,6 +49,7 @@ function App() {
             <div
               key={i}
               className='suggestion col-md-12 justify-content-md-center'
+              onClick={() => onSuggestHandler(suggestion.email)}
             >
               {suggestion.email}
             </div>
