@@ -46,6 +46,7 @@ function App() {
         onBlur={() => {
           setTimeout(() => {
             setSuggestions([])
+            //didn't work with 100
           }, 300)
         }}
       />
